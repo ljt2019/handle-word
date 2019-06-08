@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: exe-python
+  profiles:
+    active: test
+
+#logging:
+#  config: classpath:logback.xml
+
+mybatis:
+        mapperLocations: classpath*:com/python/**/dao/**/*Mapper.xml
+        config-location: classpath:mybatis-config.xml
+
+#debug: true

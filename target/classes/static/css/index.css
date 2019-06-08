@@ -1,0 +1,211 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.page .wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.page .wrap .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.page .wrap .wrapper .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+.page .wrap .wrapper .container .head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  height: 83px;
+  z-index: 999;
+  border-bottom: 1px solid #03a2ef;
+}
+.page .wrap .wrapper .container .head nav {
+  margin-left: 21rem;
+}
+.page .wrap .wrapper .container .head nav .nav-list::-webkit-scrollbar {
+  height: 9px;
+}
+.page .wrap .wrapper .container .head nav .nav-list::-webkit-scrollbar-thumb {
+  /*滚动条的圆角*/
+  border-radius: 0px;
+  /*滚动条的背景颜色*/
+  background-color: #03a2ef;
+}
+.page .wrap .wrapper .container .head nav .nav-list::-webkit-scrollbar-track {
+  /*滚动条的背景区域的圆角*/
+  border-radius: 0;
+  /*滚动条的背景颜色*/
+  background-color: #b3d4fc;
+}
+.page .wrap .wrapper .container .head nav .nav-list {
+  list-style: none;
+  overflow: auto;
+  white-space: nowrap;
+  border-left: 1px solid #eee;
+}
+.page .wrap .wrapper .container .head nav .nav-list li {
+  display: inline-block;
+  padding: 25px 20px 26px 20px;
+  cursor: pointer;
+}
+.page .wrap .wrapper .container .head nav .nav-list .active {
+  background: #0b83d0;
+  color: #fff;
+}
+.page .wrap .wrapper .container .head .logo {
+  width: 267px;
+  height: 63px;
+  margin-left: 40px;
+  margin-top: 10px;
+  float: left;
+}
+.page .wrap .wrapper .container .head .logo img {
+  width: 100%;
+  height: 100%;
+}
+.page .wrap .wrapper .container .sys-intro {
+  margin-top: 83px;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 83px);
+  background: url(../img/index-bg.png) center no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .wrap .wrapper .container .sys-intro .sys-intro-text {
+  color: #fff;
+  text-align: center;
+  width: 66%;
+  margin-top: 8%;
+}
+.page .wrap .wrapper .container .sys-intro .sys-intro-text h1 {
+  font-weight: 400;
+  font-size: 3rem;
+}
+.page .wrap .wrapper .container .sys-intro .sys-intro-text p {
+  font-size: 1.5rem;
+  width: 66%;
+  margin: 0 auto;
+}
+.page .wrap .wrapper .container .content {
+  display: flex;
+  flex-direction: column;
+  align-item: center;
+  width: 100%;
+}
+.page .wrap .wrapper .container .content .selected {
+  text-align: center;
+  padding-top: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+.page .wrap .wrapper .container .content .selected .selected-text {
+  font-size: 2rem;
+}
+.page .wrap .wrapper .container .content .main {
+  text-align: center;
+}
+.page .wrap .wrapper .container .content .main .selected-content {
+  width: 1200px;
+  margin: 0 auto;
+}
+.page .wrap .wrapper .container .content .main .selected-content .intro-text {
+  margin-top: 2rem;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(to left, #0387e5, #03b8ec) left top no-repeat, linear-gradient(to bottom, #0387e5, #03b8ec) left top no-repeat, linear-gradient(to left, #0387e5, #03b8ec) right top no-repeat, linear-gradient(to bottom, #0387e5, #03b8ec) right top no-repeat, linear-gradient(to left, #0387e5, #03b8ec) left bottom no-repeat, linear-gradient(to bottom, #0387e5, #03b8ec) left bottom no-repeat, linear-gradient(to left, #0387e5, #03b8ec) right bottom no-repeat, linear-gradient(to left, #0387e5, #03b8ec) right bottom no-repeat;
+  background-size: 1px 15px, 15px 1px, 1px 15px, 15px 1px;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload .upload-img {
+  position: relative;
+  background: #f7f8fa;
+  width: 398px;
+  height: 298px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload .upload-img .upload-tips {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload .upload-img .upload-wrap {
+  position: relative;
+  width: 398px;
+  height: 298px;
+  line-height: 298px;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload .upload-img .upload-wrap .upload-icon {
+  width: 133px;
+  height: 107px;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .upload .upload-img .upload-wrap .uploaded-img {
+  width: 100%;
+  height: 100%;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .result {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  border: 1px solid #eee;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .result .result-content {
+  position: relative;
+  height: 253px;
+  width: 100%;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .result .result-content #form1 {
+  height: 253px;
+  width: 100%;
+  position: relative;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .result .result-content #form1 #targetjson {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #f7f8fa;
+}
+.page .wrap .wrapper .container .content .main .upload-and-result .result .result-title {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.page .wrap .wrapper .container footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 6rem;
+  background: #eee;
+}
+.page .wrap .wrapper .container footer p {
+  margin: 30px 0;
+}

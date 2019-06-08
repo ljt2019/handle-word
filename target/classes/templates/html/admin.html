@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <title>后台管理配置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/iview.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="/js/vendor/vue.js"></script>
+    <script src="/js/vendor/iview.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="wrap">
+        <div class="wrapper">
+            <div id="admin" class="container">
+                <!--顶部-->
+                <header class="head">
+                    <div class="logo">
+                        <div class="logo-img">
+                            <img src="/img/logo.png" alt="">
+                        </div>
+                        <div class="logo-text">
+                            <img src="/img/admin-logo.png" alt="">
+                        </div>
+                    </div>
+                </header>
+                <section class="content">
+                    <div class="main">
+                        <!--新增识别和删除按钮-->
+                        <div class="button-grounp">
+                            <i-Button v-on:click="modal = true"
+                                      type="primary"
+                                      icon="ios-add-circle-outline">新增识别
+                            </i-Button>
+                            <i-Button
+                                    v-on:click="onDelete"
+                                    type="error"
+                                    icon="ios-trash-outline">删除
+                            </i-Button>
+                        </div>
+                        <!--表格内容-->
+                        <div class="table">
+                            <i-Table border
+
+                                     ref="selection"
+                                     :columns="columns"
+                                     :data="list"
+                                     v-on:on-selection-change="handleDelete"
+                                     v-on:on-row-dblclick="handleEdit">
+                            </i-Table>
+                        </div>
+                        <div class="page">
+                            <Page :total="totalData"
+                                  v-on:on-change="onChangePage"
+                                  show-elevator
+
+                            />
+                        </div>
+                        <!--新增识别模态框-->
+                        <div class="modal">
+                            <Modal
+                                    v-model="modal"
+                                    title="新增识别"
+                                    v-on:on-ok="onAdd"
+                                    v-on:on-cancel="">
+                                <div style="margin-bottom: 10px; display: flex;align-items:center">
+                                    <span style="margin-right: 10px;" v-text="columns[1].title"></span>
+                                    <i-input v-model="name" style="width: 300px" />
+                                </div>
+                                <div style="margin-bottom: 10px; display: flex;">
+                                    <span v-text="columns[2].title"></span>
+                                    <i-input v-model="description"
+                                             type="textarea"
+                                             :rows="4"
+                                             placeholder="" />
+                                </div>
+                                <div style="margin-bottom: 10px; display: flex;">
+                                    <span v-text="columns[3].title"></span>
+                                    <i-input v-model="cmd"
+                                             type="textarea"
+                                             :rows="4"
+                                             placeholder="" />
+                                </div>
+                            </Modal>
+                            <!--编辑识别模态框-->
+                            <Modal
+                                    v-model="modalEdit"
+                                    title="编辑识别"
+                                    v-on:on-ok="onEdit"
+                                    v-on:on-cancel="">
+                                <div style="margin-bottom: 10px; display: flex;align-items:center">
+                                    <span style="margin-right: 10px;" v-text="columns[1].title"></span>
+                                    <i-input v-model="name" style="width: 300px" />
+                                </div>
+                                <div style="margin-bottom: 10px; display: flex">
+                                    <span v-text="columns[2].title"></span>
+                                    <i-input v-model="description"
+                                             type="textarea"
+                                             :rows="4"
+                                             placeholder="" />
+                                </div>
+                                <div style="margin-bottom: 10px; display: flex">
+                                    <span v-text="columns[3].title"></span>
+                                    <i-input v-model="cmd"
+                                             type="textarea"
+                                             :rows="4"
+                                             placeholder="" />
+                                </div>
+                            </Modal>
+                        </div>
+                    </div>
+                </section>
+                <!--footer-->
+                <footer>
+                    <p>版权所有©️2019，广东省电信规划设计院大数据工程院</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/vendor/axios.min.js"></script>
+<script src="/js/vendor/admin.js"></script>
+</body>
+</html>

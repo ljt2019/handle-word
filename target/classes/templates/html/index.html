@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <title>图像识别</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/iview.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/vendor/vue.js"></script>
+    <script src="/js/vendor/iview.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <div class="wrap">
+        <div class="wrapper">
+            <div id="app" class="container">
+                <header class="head">
+                    <div class="logo clearfix">
+                        <img src="/img/index-logo.png" alt="">
+                    </div>
+                    <nav>
+                        <ul class="nav-list">
+                            <li v-for="(item,index) of navItems"
+                                :key='index'
+                                :class="activeClass == index ? 'active':''"
+                                v-on:click="selectSort(index)"
+                            ><span>{{item.name}}</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <section class="sys-intro">
+                    <div class="sys-intro-text">
+                        <h1>高精度图片识别，快速实现AI赋能</h1>
+                        <p>Implementing AI empowerment width high-resolution recognition of pictures</p>
+                    </div>
+                </section>
+                <section class="content">
+                    <div class="selected">
+                        <span class="selected-text">{{title}}</span>
+                    </div>
+                    <div class="main">
+                        <div class="selected-content">
+                            <span class="intro">功能简介</span>
+                            <p class="intro-text">{{ itemDescription }}</p>
+                        </div>
+                        <div class="upload-and-result">
+                            <div class="upload">
+                                <div class="upload-img">
+                                    <div class="upload-tips">本地上传</div>
+                                    <!--<img src="/img/upload.png" alt="">-->
+                                    <!--<img class="uploaded-img" src="/img/index-bg.png" alt="">-->
+                                    <Upload
+                                            :format="['png','jpg','jpeg','pdf']"
+                                            :on-format-error="handleError"
+                                            :show-upload-list="false"
+                                            name="file"
+                                            :before-upload="beforeUpload">
+                                        <div class="upload-wrap">
+                                            <img v-if="uploadStatus===-1" class="upload-icon" src="/img/upload.png">
+                                            <img class="uploaded-img"
+                                                 :src="imgSrc"
+                                                 v-else
+                                            >
+                                        </div>
+                                    </Upload>
+                                </div>
+
+                            </div>
+                            <div class="arrow-icon">
+                                <img src="/img/arrow-right.png" alt="">
+                            </div>
+                            <div class="result">
+                                <div class="result-title">
+                                    <span class="show">结果展示</span>
+                                </div>
+                                <div class="result-content">
+                                    <form id="form1" name="form1">
+                                        <textarea name="sourcejson" id="sourcejson" cols="30" rows="10"
+                                                  style="display:none;"></textarea>
+                                        <textarea name="targetjson" id="targetjson" cols="70" rows="10">  </textarea>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <p>版权所有©️2019，广东省电信规划设计院大数据工程院</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="/js/vendor/axios.min.js"></script>
+<script src="/js/vendor/index.js"></script>
+<script src="/layer/layer.js"></script>
+</body>
+</html>

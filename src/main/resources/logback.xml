@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- %m输出的信息,%p日志级别,%t线程名,%d日期,%c类的全名,%i索引【从数字0开始递增】,,, -->
+    <!-- appender是configuration的子节点，是负责写日志的组件。 -->
+
+    <!-- 日志存储路径 -->
+    <property name="LOG_HOME" value="/home/hadoop/logs/exePython"/>
+
+    <!-- 文件输出配置 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/exe-python.log</File>
+        <!-- rollingPolicy:当发生滚动时，决定 RollingFileAppender 的行为，涉及文件移动和重命名。 -->
+        <!-- TimeBasedRollingPolicy： 最常用的滚动策略，它根据时间来制定滚动策略，既负责滚动也负责出发滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover 保存历史记录到这个文件夹一日起为后缀 -->
+            <FileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}/exe-python.%d{yyyy-MM-dd}.%i.log.zip</FileNamePattern>
+            <!-- keep 30 days' worth of history 保存天数-->
+            <maxHistory>90</maxHistory>
+            <!-- 日志大小 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>128MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+        <encoder>
+            <!-- pattern节点，用来设置日志的输入格式 -->
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+            <!-- 此处设置字符集：window中用GBK，linux下用UTF-8 -->
+            <charset>UTF-8</charset>
+            <!-- <charset>GBK</charset>  -->
+        </encoder>
+    </appender>
+
+    <!-- ConsoleAppender：把日志输出到控制台 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，${PID} 进程Id， %thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} ${PID} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+            <charset>UTF-8</charset>
+            <!-- <charset>GBK</charset> -->
+        </encoder>
+    </appender>
+
+    <!-- root节点，配置日志级别，添加输出节点 -->
+    <root level="INFO">
+        <appender-ref ref="FILE"></appender-ref>
+        <appender-ref ref="STDOUT"></appender-ref>
+    </root>
+
+    <!-- com.exe.shell为根包，也就是只要是发生在这个根包下面的所有日志操作行为的权限都是DEBUG -->
+    <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  -->
+    <logger name="com.python" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"></appender-ref>
+        <appender-ref ref="STDOUT"></appender-ref>
+    </logger>
+
+</configuration>

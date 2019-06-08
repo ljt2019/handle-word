@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>handle.word</groupId>
+    <artifactId>handle-word</artifactId>
+    <packaging>jar</packaging>
+
+    <name>handle-word</name>
+    <description>Handle Word</description>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!--jdk版本 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8
+        </project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+       
+    </properties>
+
+    <dependencies>
+
+        <!--word转pdf-->
+        <dependency>
+            <groupId>com.aspose.words</groupId>
+            <artifactId>aspose-words-jdk16</artifactId>
+            <version>14.6.0.0</version>
+        </dependency>
+
+        <!--xwpf在该包下，引入这个会依赖引入 poi和poi-ooxml-schemas-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.13</version>
+        </dependency>
+
+        <!--旧的废弃-->
+        <!--<dependency>-->
+            <!--<groupId>com.lowagie</groupId>-->
+            <!--<artifactId>itext</artifactId>-->
+            <!--<version>2.1.7</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.lowagie</groupId>-->
+            <!--<artifactId>itext-rtf</artifactId>-->
+            <!--<version>2.1.7</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.itextpdf</groupId>-->
+            <!--<artifactId>itext-asian</artifactId>-->
+            <!--<version>5.2.0</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>cn.lesper</groupId>
+            <artifactId>iTextAsian</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>handle-word</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
