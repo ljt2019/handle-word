@@ -15,8 +15,8 @@ import java.io.IOException;
 public class Doc2PDF {
 
     public static void main(String[] args) {
-        String sourcePath = "C:\\Users\\tiger\\Desktop\\联奕科技\\研发三部-林继泰培训作业.docx";
-        String targetPath = "C:\\Users\\tiger\\Desktop\\联奕科技\\研发三部-林继泰培训作业.pdf";
+        String sourcePath = "C:\\Users\\tiger\\Desktop\\研发三部-林继泰培训作业.docx";
+        String targetPath = "C:\\Users\\tiger\\Desktop\\研发三部-林继泰培训作业.pdf";
         doc2pdf(sourcePath, targetPath);
     }
 
