@@ -4,6 +4,27 @@
     <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="重构">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/constant/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/TitleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/XWPFBorderStyleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/XWPFWidthEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itext/ItextWordUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itextpdf/PdfUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itextpdf/TableTitleEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/POIMergeDocUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/WordTagTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFParagraphHandler$RunChar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFParagraphHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFRunHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFTableHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFWordUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XwpfUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/ItextPdfTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/ItextPdfTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/ItextWordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/ItextWordTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/WordTagTemplateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/WordTagTemplateTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/XWPTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/XWPTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ItextWordTest">
+  <component name="RunManager" selected="Application.XWPTest (1)">
     <configuration name="ItextPdfTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.word.ItextPdfTest" />
       <module name="handle-word" />
@@ -153,13 +174,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tiger.Test" />
+    <configuration name="XWPTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.word.XWPTest" />
       <module name="handle-word" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tiger.*" />
+          <option name="PATTERN" value="com.word.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,19 +225,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Test" />
       <item itemvalue="Application.XWPTest" />
       <item itemvalue="Application.ItextTest" />
       <item itemvalue="Application.ItextPdfTest" />
       <item itemvalue="Application.ItextWordTest" />
+      <item itemvalue="Application.XWPTest (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ItextWordTest" />
+        <item itemvalue="Application.XWPTest (1)" />
         <item itemvalue="Application.ItextPdfTest" />
+        <item itemvalue="Application.ItextWordTest" />
         <item itemvalue="Application.XWPTest" />
         <item itemvalue="Application.ItextTest" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +269,7 @@
       <workItem from="1568720887283" duration="723000" />
       <workItem from="1568723197781" duration="10192000" />
       <workItem from="1569127938870" duration="974000" />
-      <workItem from="1572692077473" duration="2223000" />
+      <workItem from="1572692077473" duration="3076000" />
     </task>
     <task id="LOCAL-00001" summary="去除一些注释">
       <created>1560006704118</created>

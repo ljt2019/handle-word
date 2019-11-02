@@ -48,7 +48,7 @@
             <version>3.13</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/ooxml-schemas -->
+        <!-- CTPageSz  https://mvnrepository.com/artifact/org.apache.poi/ooxml-schemas -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>ooxml-schemas</artifactId>

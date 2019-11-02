@@ -93,6 +93,11 @@ public class XWPFWordUtils {
         }
     }
 
+    public static void addNewPage(XWPFDocument doc,BreakType breakType){
+        XWPFParagraph xp = doc.createParagraph();
+        xp.createRun().addBreak(breakType);
+    }
+
     /**
      * 获得一个表格,设定行数和列数
      *
