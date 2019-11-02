@@ -2,9 +2,9 @@ package com.word;
 
 import com.lowagie.text.*;
 import com.lowagie.text.rtf.RtfWriter2;
-import com.tiger.tiger.constant.Constants;
-import com.tiger.tiger.enums.TitleEnum;
-import com.tiger.tiger.itext.ItextWordUtils;
+import com.tiger.constant.Constants;
+import com.tiger.enums.TitleEnum;
+import com.tiger.itext.ItextWordUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

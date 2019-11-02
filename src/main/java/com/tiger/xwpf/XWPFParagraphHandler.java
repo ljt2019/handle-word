@@ -1,4 +1,4 @@
-package com.tiger.tiger.xwpf;
+package com.tiger.xwpf;
 
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;

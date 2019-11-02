@@ -1,6 +1,6 @@
 package com.word;
 
-import com.tiger.tiger.xwpf.WordTagTemplate;
+import com.tiger.xwpf.WordTagTemplate;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import java.io.File;

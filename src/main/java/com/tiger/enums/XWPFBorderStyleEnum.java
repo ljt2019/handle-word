@@ -1,4 +1,4 @@
-package com.tiger.tiger.enums;
+package com.tiger.enums;
 
 import java.util.Objects;
 

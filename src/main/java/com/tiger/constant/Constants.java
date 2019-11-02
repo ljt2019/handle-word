@@ -1,4 +1,4 @@
-package com.tiger.tiger.constant;
+package com.tiger.constant;
 
 /**
  * @description:

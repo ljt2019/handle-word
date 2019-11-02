@@ -1,10 +1,10 @@
 package com.word;
 
 
-import com.tiger.tiger.constant.Constants;
-import com.tiger.tiger.enums.TitleEnum;
-import com.tiger.tiger.enums.XWPFWidthEnum;
-import com.tiger.tiger.xwpf.XWPFWordUtils;
+import com.tiger.constant.Constants;
+import com.tiger.enums.TitleEnum;
+import com.tiger.enums.XWPFWidthEnum;
+import com.tiger.xwpf.XWPFWordUtils;
 import org.apache.poi.xwpf.usermodel.*;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STPageOrientation;
 

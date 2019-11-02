@@ -5,8 +5,8 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfDate;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.tiger.tiger.itextpdf.PdfUtil;
-import com.tiger.tiger.itextpdf.TableTitleEnum;
+import com.tiger.itextpdf.PdfUtil;
+import com.tiger.itextpdf.TableTitleEnum;
 
 import java.io.File;
 import java.io.FileOutputStream;

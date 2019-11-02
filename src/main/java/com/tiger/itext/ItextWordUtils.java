@@ -1,4 +1,4 @@
-package com.tiger.tiger.itext;
+package com.tiger.itext;
 
 import com.lowagie.text.*;
 

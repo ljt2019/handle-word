@@ -1,4 +1,4 @@
-package com.tiger.tiger.itextpdf;
+package com.tiger.itextpdf;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;

@@ -1,4 +1,4 @@
-package com.tiger.tiger.itextpdf;
+package com.tiger.itextpdf;
 
 import java.util.Objects;
 

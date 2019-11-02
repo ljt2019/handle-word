@@ -1,4 +1,4 @@
-package com.tiger.tiger.xwpf;
+package com.tiger.xwpf;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.openxml4j.opc.OPCPackage;

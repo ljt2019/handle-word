@@ -1,154 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/constant/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/TitleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFBorderStyleEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFWidthEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itext/ItextWordUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/WordTagTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFWordUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XwpfUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextPdfTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextWordTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/word/WordTagTemplateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/aspose/words/Doc2PDF.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/PdfUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/PdfUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/TableTitleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/TableTitleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/poi/xwpf/POIMergeDocUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/POIMergeDocUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/poi/xwpf/XWPFDocTemplate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/poi/xwpf/XWPFParagraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFParagraphHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/poi/xwpf/XWPFRunHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFRunHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/poi/xwpf/XWPFTableHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFTableHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/admin.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fonts/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fonts/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fonts/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fonts/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/fonts/ionicons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/iview.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/admin-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/analyse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/arrow-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/baseStation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/businessCircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/calendar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/dropdown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/index-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/index-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/info.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/interestPoint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/location.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/map.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/more.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/rocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/tips.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/axios.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/echarts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/iview.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/modernizr-3.5.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/polyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/vendor/vue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layer/skin/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/TestWord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/handle-word.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/handle-word.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/aspose/words/Doc2PDF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/itextpdf/PdfUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/itextpdf/TableTitleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/POIMergeDocUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/XWPFDocTemplate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/XWPFParagraphHandler$RunChar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/XWPFParagraphHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/XWPFRunHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/poi/xwpf/XWPFTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/admin.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/fonts/ionicons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/fonts/ionicons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/fonts/ionicons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/fonts/ionicons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/fonts/ionicons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/iview.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/admin-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/analyse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/arrow-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/baseStation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/businessCircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/calendar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/dropdown.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index-bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/info.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/interestPoint.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/location.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/map.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/more.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/rocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/tips.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/upload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/axios.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/echarts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/iview.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/modernizr-3.5.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/polyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/vendor/vue.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/TestWord.class" beforeDir="false" />
+    <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="去除一些注释">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/aspose/Doc2PDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/constant/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/TitleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/TitleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFBorderStyleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFBorderStyleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFWidthEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFWidthEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itext/ItextWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itext/ItextWordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/PdfUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/PdfUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/TableTitleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/TableTitleEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/POIMergeDocUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/POIMergeDocUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/WordTagTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/WordTagTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFParagraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFParagraphHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFRunHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFRunHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFTableHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFTableHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XwpfUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XwpfUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/ItextPdfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextPdfTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/ItextWordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextWordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/WordTagTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/WordTagTemplateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -393,7 +265,7 @@
       <workItem from="1568720887283" duration="723000" />
       <workItem from="1568723197781" duration="10192000" />
       <workItem from="1569127938870" duration="974000" />
-      <workItem from="1572692077473" duration="1514000" />
+      <workItem from="1572692077473" duration="1767000" />
     </task>
     <task id="LOCAL-00001" summary="去除一些注释">
       <created>1560006704118</created>
@@ -402,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560006704118</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="去除一些注释">
+      <created>1572693636823</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572693636823</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

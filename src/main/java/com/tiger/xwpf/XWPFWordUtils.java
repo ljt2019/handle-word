@@ -1,6 +1,6 @@
-package com.tiger.tiger.xwpf;
+package com.tiger.xwpf;
 
-import com.tiger.tiger.enums.XWPFBorderStyleEnum;
+import com.tiger.enums.XWPFBorderStyleEnum;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.xwpf.model.XWPFHeaderFooterPolicy;
 import org.apache.poi.xwpf.usermodel.*;

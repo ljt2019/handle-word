@@ -1,4 +1,4 @@
-package com.tiger.tiger.xwpf;
+package com.tiger.xwpf;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.util.Units;
