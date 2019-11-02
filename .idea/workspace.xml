@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="去除一些注释">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tiger/aspose/Doc2PDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/constant/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/TitleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/TitleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFBorderStyleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFBorderStyleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/enums/XWPFWidthEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFWidthEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itext/ItextWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itext/ItextWordUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/PdfUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/PdfUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/itextpdf/TableTitleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/itextpdf/TableTitleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/POIMergeDocUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/POIMergeDocUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/WordTagTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/WordTagTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFParagraphHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFParagraphHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFRunHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFRunHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFTableHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFTableHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XWPFWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/tiger/xwpf/XwpfUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XwpfUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/ItextPdfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextPdfTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/ItextWordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/ItextWordTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/WordTagTemplateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/WordTagTemplateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" afterDir="false" />
+    <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="重构">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +248,7 @@
       <workItem from="1568720887283" duration="723000" />
       <workItem from="1568723197781" duration="10192000" />
       <workItem from="1569127938870" duration="974000" />
-      <workItem from="1572692077473" duration="1767000" />
+      <workItem from="1572692077473" duration="2223000" />
     </task>
     <task id="LOCAL-00001" summary="去除一些注释">
       <created>1560006704118</created>
@@ -281,7 +264,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572693636823</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="重构">
+      <created>1572693946658</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572693946658</updated>
+    </task>
+    <task id="LOCAL-00004" summary="重构">
+      <created>1572693976993</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572693976993</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +297,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="去除一些注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="去除一些注释" />
+    <MESSAGE value="重构" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构" />
   </component>
   <component name="masterDetails">
     <states>
