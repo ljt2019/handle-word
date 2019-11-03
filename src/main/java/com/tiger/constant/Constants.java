@@ -6,7 +6,7 @@ package com.tiger.constant;
  * @create: 2019-11-02 13:59
  */
 public class Constants {
-    public final static int CNT = 20;
+    public final static int CNT = 100;
     public final static int BIG_COL_CNT = 3;
     //总行数
     public final static int ROW_CNT = 32;

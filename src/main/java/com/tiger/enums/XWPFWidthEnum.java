@@ -9,11 +9,13 @@ import java.util.Objects;
  * @create: 2019-11-02 12:20
  */
 public enum XWPFWidthEnum {
-    NAME(0, "2400"),
-    TYPE(1, "1200"),
-    CREDIT(2, "500"),
-    SCORE(3, "500"),
-    GPA(4, "500"),
+
+    //总宽度要大于纸张宽度，比例效果才好
+    NAME(0, "24000"),
+    TYPE(1, "12000"),
+    CREDIT(2, "5000"),
+    SCORE(3, "5000"),
+    GPA(4, "5000"),
 
     ;
 

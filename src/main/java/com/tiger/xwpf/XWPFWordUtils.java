@@ -46,14 +46,14 @@ public class XWPFWordUtils {
     /**
      * 设置页边距 (word中1厘米约等于567)
      *
-     * @param document
+     * @param doc
      * @param left
      * @param top
      * @param right
      * @param bottom
      */
-    public static void setDocMargin(XWPFDocument document, String left, String top, String right, String bottom) {
-        CTSectPr sectPr = document.getDocument().getBody().addNewSectPr();
+    public static void setDocMargin(XWPFDocument doc, String left, String top, String right, String bottom) {
+        CTSectPr sectPr = doc.getDocument().getBody().addNewSectPr();
         CTPageMar ctpagemar = sectPr.addNewPgMar();
         if (StringUtils.isNotBlank(left)) {
             ctpagemar.setLeft(new BigInteger(left));
@@ -93,15 +93,21 @@ public class XWPFWordUtils {
         }
     }
 
-    public static void addNewPage(XWPFDocument doc,BreakType breakType){
+    /**
+     * 分页
+     *
+     * @param doc       XWPFDocument
+     * @param breakType 分页类型
+     */
+    public static void addNewPage(XWPFDocument doc, BreakType breakType) {
         XWPFParagraph xp = doc.createParagraph();
         xp.createRun().addBreak(breakType);
     }
 
     /**
-     * 获得一个表格,设定行数和列数
+     * 获得一个指定行数和列数的表格
      *
-     * @param doc  doc对象
+     * @param doc  XWPFDocument 对象
      * @param rows 行数
      * @param cols 列数
      * @return 表格对象
@@ -116,14 +122,15 @@ public class XWPFWordUtils {
     }
 
     /**
-     * 设置表格样式
+     * 设置表格样式，表格线的样式与线宽大小
      *
-     * @param table
+     * @param table   XWPFTable 对象
+     * @param inside  内线
+     * @param outside 外线
      */
     public static void setTableStyle(XWPFTable table, boolean inside, boolean outside) {
         //线宽实体
         CTTblBorders borders = table.getCTTbl().getTblPr().addNewTblBorders();
-
         if (inside) {
             //表格内部横向线宽
             CTBorder hBorder = borders.addNewInsideH();
@@ -164,54 +171,47 @@ public class XWPFWordUtils {
     }
 
     /**
-     * 设置表格样式
+     * 1、向表格中格子填充内容
+     * 2、设置列宽
+     * 3、默认水平居左
      *
-     * @param table
-     */
-    public static void setTableStyle(XWPFTable table, String val) {
-        CTTblBorders borders = table.getCTTbl().getTblPr().addNewTblBorders();
-        CTBorder hBorder = borders.addNewInsideH();
-        hBorder.setVal(STBorder.Enum.forString(val));
-        hBorder.setSz(new BigInteger("1"));
-        hBorder.setColor("0000FF");
-        table.setWidth(100);
-    }
-
-    /**
-     * 填充表格
-     * 设置列宽,默认水平居左
-     *
-     * @param cell
-     * @param width
-     * @param content
-     * @param size
+     * @param cell    XWPFTableCell 对象
+     * @param width   格子宽度，例如【"2400"】
+     * @param content 文本
+     * @param size    字体大小
      */
     public static XWPFTableCell fillCellLeft(XWPFTableCell cell, String width, String content, int size, boolean bold) {
-        //设置底色
-//        cell.setColor("001A35");
-        CTTc cttc = cell.getCTTc();
-        CTTcPr cellPr = cttc.addNewTcPr();
-        cellPr.addNewVAlign().setVal(STVerticalJc.CENTER);
-        cttc.getPList().get(0).addNewPPr().addNewJc().setVal(STJc.LEFT);
-        CTTblWidth tblWidth = cellPr.isSetTcW() ? cellPr.getTcW() : cellPr.addNewTcW();
-        if (!StringUtils.isEmpty(width)) {
-            tblWidth.setW(new BigInteger(width));
-            tblWidth.setType(STTblWidth.DXA);
-        }
-        setValue(cell, content, size, bold);
+        //设置表格中格子列宽
+        setTableWith(cell, width);
+        //加粗居左
+        fillCell(cell, content, size, bold, ParagraphAlignment.LEFT);
         return cell;
     }
 
     /**
-     * 填充表格
+     * 填充表格头部
      * 设置列宽,默认水平居中
      *
-     * @param cell
-     * @param width
-     * @param content
-     * @param size
+     * @param cell    XWPFTableCell 对象
+     * @param width   格子宽度
+     * @param content 文本内容
+     * @param size    字体大小
      */
     public static XWPFTableCell fillTableTitle(XWPFTableCell cell, String width, String content, int size, boolean bold) {
+        //设置表格中格子列宽
+        setTableWith(cell, width);
+        //加粗居中
+        fillCell(cell, content, size, bold, ParagraphAlignment.CENTER);
+        return cell;
+    }
+
+    /**
+     * 设置表格中格子列宽
+     *
+     * @param cell  格子
+     * @param width 格子宽度 例如 【"2400"】
+     */
+    private static void setTableWith(XWPFTableCell cell, String width) {
         CTTc cttc = cell.getCTTc();
         CTTcPr cellPr = cttc.addNewTcPr();
         cellPr.addNewVAlign().setVal(STVerticalJc.CENTER);
@@ -221,20 +221,24 @@ public class XWPFWordUtils {
             tblWidth.setW(new BigInteger(width));
             tblWidth.setType(STTblWidth.DXA);
         }
-        setValue(cell, content, size, bold);
-        return cell;
     }
 
-
-    public static XWPFRun getRun(XWPFDocument doc, String content, int size, boolean bold) {
-        XWPFParagraph paragraph = doc.createParagraph();
-        XWPFRun run = paragraph.createRun();
+    /**
+     * 向doc中填充文本
+     *
+     * @param doc     XWPFDocument 对象
+     * @param content 文本内容
+     * @param size    字体大小
+     * @param bold    是否加粗
+     * @return XWPFRun 对象
+     */
+    public static XWPFRun fillDoc(XWPFDocument doc, String content, int size, boolean bold) {
+        XWPFParagraph xp = doc.createParagraph();
+        XWPFRun run = xp.createRun();
         //设置行间距
         run.setTextPosition(1);
         //对齐方式
-        paragraph.setAlignment(ParagraphAlignment.CENTER);
-        //加粗
-        run.setBold(true);
+        xp.setAlignment(ParagraphAlignment.CENTER);
         //设置颜色--十六进制
         run.setColor("000000");
         //字体
@@ -249,48 +253,48 @@ public class XWPFWordUtils {
     }
 
     /**
-     * 在指定表格中插入内容
+     * 向表格中的指定格子填充文本
      *
-     * @param table
-     * @param row
-     * @param col
-     * @param content
-     * @param size
+     * @param table   XWPFTable 对象
+     * @param row     行索引
+     * @param col     列索引
+     * @param content 内容
+     * @param size    字体大小
      */
     public static XWPFTableCell fillCell(XWPFTable table, int row, int col, String content, int size) {
         XWPFTableCell cell = table.getRow(row).getCell(col);
         //方式1
         cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
-        setValue(cell, content, size);
+        fillCell(cell, content, size);
         //方式2
 //        fillCell(cell, content, size,false);
         return cell;
     }
 
     /**
-     * 在指定表格中插入内容
+     * 向表格中的指定格子填充文本
      *
-     * @param table
-     * @param row
-     * @param col
-     * @param content
-     * @param size
+     * @param table   XWPFTable 对象
+     * @param row     行索引
+     * @param col     列索引
+     * @param content 文本内容
+     * @param size    字体大小
      */
     public static XWPFTableCell fillCell(XWPFTable table, int row, int col, String content, int size, boolean bold) {
         XWPFTableCell cell = table.getRow(row).getCell(col);
         //方式1
         cell.setVerticalAlignment(XWPFTableCell.XWPFVertAlign.CENTER);
-        setValue(cell, content, size, bold);
+        fillCell(cell, content, size, bold, ParagraphAlignment.CENTER);
         //方式2
 //        fillCell(cell, content, size,bold);
         return cell;
     }
 
     /**
-     * 向表格中插入文本
+     * 向表格中填充文本
      *
-     * @param cell
-     * @param content
+     * @param cell    XWPFTableCell对象
+     * @param content 文本内容
      */
     public static XWPFTableCell fillCell(XWPFTableCell cell, String content, int size, boolean bold) {
         CTP ctp = CTP.Factory.newInstance();
@@ -311,73 +315,18 @@ public class XWPFWordUtils {
         return cell;
     }
 
-    private static XWPFRun setValue(XWPFTableCell cell, String content, int size) {
-        //获取行中某个格子所有段落
-        List<XWPFParagraph> paras = cell.getParagraphs();
-        //获取某段落
-        XWPFParagraph para = paras.get(0);
-        //居中
-        para.setAlignment(ParagraphAlignment.CENTER);
-        List<XWPFRun> runs = para.getRuns();
-        XWPFRun run;
-        if (runs.size() <= 0) {
-            run = para.createRun();
-//            XWPFRun run = para.insertNewRun(0);
-//            run.setFontFamily("宋体正文");
-            run.setFontFamily("宋体");
-            run.setFontSize(size);
-            run.setText(content);
-            //加粗
-//            run.setBold(true);
-        } else {
-            run = runs.get(0);
-            run.setText(content, 0);
-            //加粗
-//            run.setBold(true);
-        }
-        return run;
-    }
-
-    private static XWPFRun setValue(XWPFTableCell cell, String content, int size, boolean bold) {
-        //获取行中某个格子所有段落
-        List<XWPFParagraph> paras = cell.getParagraphs();
-        //获取某段落
-        XWPFParagraph para = paras.get(0);
-        //居中
-//        para.setAlignment(ParagraphAlignment.CENTER);
-        List<XWPFRun> runs = para.getRuns();
-        XWPFRun run;
-        if (runs.size() <= 0) {
-            run = para.createRun();
-//            XWPFRun run = para.insertNewRun(0);
-//            run.setFontFamily("宋体正文");
-            run.setFontFamily("宋体");
-            run.setFontSize(size);
-            run.setText(content);
-            //加粗
-            run.setBold(bold);
-        } else {
-            run = runs.get(0);
-            run.setText(content, 0);
-            //加粗
-            run.setBold(bold);
-        }
-        return run;
-    }
-
     /**
      * 合并单元格(水平合并)
      *
-     * @param table
-     * @param row
-     * @param fromCell
-     * @param toCell
+     * @param table   XWPFTable对象
+     * @param row     行索引
+     * @param fromCol 合并起始列索引
+     * @param toCol   合并结束列索引
      */
-    public static void mergeCellsHorizontal(XWPFTable table, int row,
-                                            int fromCell, int toCell) {
-        for (int cellIndex = fromCell; cellIndex <= toCell; cellIndex++) {
+    public static void mergeCellsHorizontal(XWPFTable table, int row, int fromCol, int toCol) {
+        for (int cellIndex = fromCol; cellIndex <= toCol; cellIndex++) {
             XWPFTableCell cell = table.getRow(row).getCell(cellIndex);
-            if (cellIndex == fromCell) {
+            if (cellIndex == fromCol) {
                 // The first merged cell is set with RESTART merge value
                 cell.getCTTc().addNewTcPr().addNewHMerge().setVal(STMerge.RESTART);
             } else {
@@ -390,13 +339,12 @@ public class XWPFWordUtils {
     /**
      * 合并单元格(纵向合并)
      *
-     * @param table
-     * @param col
-     * @param fromRow
-     * @param toRow
+     * @param table   XWPFTable 对象
+     * @param col     列索引
+     * @param fromRow 合并起始行索引
+     * @param toRow   合并结束行索引
      */
-    public static void mergeCellsVertically(XWPFTable table, int col,
-                                            int fromRow, int toRow) {
+    public static void mergeCellsVertically(XWPFTable table, int col, int fromRow, int toRow) {
         for (int rowIndex = fromRow; rowIndex <= toRow; rowIndex++) {
             XWPFTableCell cell = table.getRow(rowIndex).getCell(col);
             if (rowIndex == fromRow) {
@@ -409,7 +357,64 @@ public class XWPFWordUtils {
         }
     }
 
-    /********************************************/
+    /**
+     * 向格子中填充文本
+     *
+     * @param cell    XWPFTableCell 对象
+     * @param content 文本内容
+     * @param size    字体大小
+     */
+    private static void fillCell(XWPFTableCell cell, String content, int size) {
+        //获取某段落
+        XWPFParagraph para = cell.getParagraphs().get(0);
+        //居中
+        para.setAlignment(ParagraphAlignment.CENTER);
+        fillRun(para, content, size);
+    }
+
+    /**
+     * 向格子中填充文本
+     *
+     * @param cell      XWPFTableCell 对象
+     * @param content   文本内容
+     * @param size      字体大小
+     * @param bold      是否加粗
+     * @param alignment 例如 ParagraphAlignment.CENTER
+     */
+    private static void fillCell(XWPFTableCell cell, String content, int size, boolean bold, ParagraphAlignment alignment) {
+        XWPFParagraph para = cell.getParagraphs().get(0);
+        para.setAlignment(alignment);
+        XWPFRun run = fillRun(para, content, size);
+        run.setBold(bold);
+    }
+
+    /**
+     * 向段落中填充文本
+     *
+     * @param para    XWPFParagraph 对象
+     * @param content 文本内容
+     * @param size    字体大小
+     * @return XWPFRun 对象
+     */
+    private static XWPFRun fillRun(XWPFParagraph para, String content, int size) {
+        XWPFRun run;
+        List<XWPFRun> runs = para.getRuns();
+        if (runs.size() <= 0) {
+            run = para.insertNewRun(0);
+            run.setText(content);
+        } else {
+            run = runs.get(0);
+            run.setText(content, 0);
+        }
+        //宋体正文
+        run.setFontFamily("宋体");
+        run.setFontSize(size);
+        //设置行间距
+        run.setTextPosition(8);
+        return run;
+    }
+
+    /*********************** 图片处理  *********************/
 
     /**
      * 获得图片类型
@@ -439,24 +444,24 @@ public class XWPFWordUtils {
     /**
      * 向段落中插入图片
      *
-     * @param id
-     * @param width     宽
-     * @param height    高
-     * @param paragraph 段落
+     * @param pictureType
+     * @param width       宽
+     * @param height      高
+     * @param paragraph   段落
      */
-    public static void createPicture(XWPFDocument doc, XWPFParagraph paragraph, int id, int width, int height) {
+    public static void insertPicture(XWPFDocument doc, XWPFParagraph paragraph, int pictureType, int width, int height) {
         final int EMU = 9525;
         width *= EMU;
         height *= EMU;
         String blipId =
-                doc.getAllPictures().get(id).getPackageRelationship().getId();
+                doc.getAllPictures().get(pictureType).getPackageRelationship().getId();
         CTInline inline =
                 paragraph.createRun().getCTR().addNewDrawing().addNewInline();
         String picXml =
                 "" + "<a:graphic xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\">" +
                         "   <a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">" +
                         "      <pic:pic xmlns:pic=\"http://schemas.openxmlformats.org/drawingml/2006/picture\">" +
-                        "         <pic:nvPicPr>" + "            <pic:cNvPr id=\"" + id +
+                        "         <pic:nvPicPr>" + "            <pic:cNvPr id=\"" + pictureType +
                         "\" name=\"Generated\"/>" + "            <pic:cNvPicPr/>" +
                         "         </pic:nvPicPr>" + "         <pic:blipFill>" +
                         "            <a:blip r:embed=\"" + blipId +
@@ -471,7 +476,6 @@ public class XWPFWordUtils {
                         "               <a:avLst/>" + "            </a:prstGeom>" +
                         "         </pic:spPr>" + "      </pic:pic>" +
                         "   </a:graphicData>" + "</a:graphic>";
-
         inline.addNewGraphic().addNewGraphicData();
         XmlToken xmlToken = null;
         try {
@@ -491,8 +495,8 @@ public class XWPFWordUtils {
         extent.setCy(height);
 
         CTNonVisualDrawingProps docPr = inline.addNewDocPr();
-        docPr.setId(id);
-        docPr.setName("学籍卡图片" + id);
+        docPr.setId(pictureType);
+        docPr.setName("图片类型" + pictureType);
         docPr.setDescr("图片描述");
     }
 }

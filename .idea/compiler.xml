@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="exe-python" />
         <module name="handle-word" />
+        <module name="exe-python" />
       </profile>
     </annotationProcessing>
   </component>

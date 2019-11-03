@@ -18,7 +18,7 @@ public class XWPTest {
 
     public static void main(String[] args) throws IOException {
         long start = System.currentTimeMillis();
-        String filePath = "c:/AAAAA/xwpf"+System.currentTimeMillis()+".docx";
+        String filePath = "c:/AAAAA/xwpf" + System.currentTimeMillis() + ".docx";
         test(filePath);
         long end = System.currentTimeMillis();
         System.out.println("输出 XWPFDocument word成功！");
@@ -26,18 +26,19 @@ public class XWPTest {
     }
 
     public static XWPFDocument test(String dest) {
-
         FileOutputStream out = null; // 创建输出流
         XWPFDocument doc = new XWPFDocument();
         //信纸
 //        WordTemplate.setDocSize(doc, "15840", "12240", STPageOrientation.Enum.forString("landscape"));
         //A4大小和横向
         XWPFWordUtils.setDocSize(doc, "16837", "11905", STPageOrientation.Enum.forString("landscape"));
-        //设置纸张边距
-        XWPFWordUtils.setDocMargin(doc, "1000", "500", "1000", "500");
+        //设置纸张边距,顺时针
+        String docMargin = "200";
+        XWPFWordUtils.setDocMargin(doc, docMargin, docMargin, docMargin, docMargin);
         //设置页眉
 //        XWPFWordUtils.createDefaultHeader(doc, "联谊大学学生成绩单");
         try {
+            //成绩内容
             setScoreInfo(doc);
             out = new FileOutputStream(new File(dest));
             doc.write(out);
@@ -45,12 +46,10 @@ public class XWPTest {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-
             if (out != null) {
                 try {
                     out.close();
                 } catch (IOException e) {
-
                     e.printStackTrace();
                 }
             }
@@ -61,14 +60,19 @@ public class XWPTest {
     private static void setScoreInfo(XWPFDocument doc) {
         for (int i = 0; i < Constants.CNT; i++) {
 
-            XWPFWordUtils.getRun(doc, "联谊科技大学学生成绩单", 12, true);
+            XWPFWordUtils.fillDoc(doc, "大学学生成绩单", 12, true);
+
             //设置学生基本信息
             setStudentInfo(doc);
 
-            XWPFWordUtils.getRun(doc, ".", 1, false);
+            //换行
+            XWPFWordUtils.fillDoc(doc, ".", 0, false);
 
             //填充成绩信息
             setScore(doc);
+
+            //落款
+            XWPFWordUtils.fillDoc(doc, "注意：***********", 9, true);
 
             //新页面
             XWPFWordUtils.addNewPage(doc, BreakType.PAGE);
@@ -77,43 +81,51 @@ public class XWPTest {
 
     private static void setScore(XWPFDocument doc) {
         //创建表格
-        XWPFTable table = XWPFWordUtils.getTable(doc, Constants.ROW_CNT, TitleEnum.values().length * Constants.BIG_COL_CNT,false);
-        XWPFTableRow tableRow = table.getRow(0);
-        List<XWPFTableCell> cellList = tableRow.getTableCells();
+        XWPFTable table = XWPFWordUtils.getTable(doc, Constants.ROW_CNT, TitleEnum.values().length * Constants.BIG_COL_CNT, false);
+        XWPFTableRow row = table.getRow(0);
+        List<XWPFTableCell> cellList = row.getTableCells();
+        //表头设置
         for (int j = 0; j < cellList.size(); j++) {
             XWPFTableCell cell = cellList.get(j);
             //设置内容水平居中及列宽
             XWPFWordUtils.fillTableTitle(cell, XWPFWidthEnum.getByCode(j % 5).getMsg(), TitleEnum.getByCode(j % 5).getMsg(), 8, true);
         }
-        for (int i = 1; i < Constants.ROW_CNT; i++) {
+        //测试数据填充
+        for (int i = 1; i < Constants.ROW_CNT - 1; i++) {
             for (int j = 0; j < Constants.WITHS.length; j++) {
                 XWPFWordUtils.fillCell(table, i, j, "测试", 8);
             }
         }
-        //合并单元格
-        XWPFWordUtils.mergeCellsHorizontal( table,  Constants.ROW_CNT-1,  10,  14);
-        XWPFWordUtils.fillCell(table, Constants.ROW_CNT-1, 10, "测的晚餐试", 8,true);
-        XWPFWordUtils.fillCell(table, Constants.ROW_CNT-1, 10, "测的晚435575餐试", 8,true);
+
+        //横向合并单元格
+        XWPFWordUtils.mergeCellsHorizontal(table, Constants.ROW_CNT - 1, 10, 14);
+        XWPFWordUtils.fillCell(table, Constants.ROW_CNT - 1, 10, "测的晚餐试", 8, true);
+        XWPFWordUtils.mergeCellsHorizontal(table, Constants.ROW_CNT - 2, 10, 14);
+        XWPFWordUtils.fillCell(table, Constants.ROW_CNT - 2, 10, "测的晚435575餐试", 8, true);
+
+        //纵向合并单元格
+        XWPFWordUtils.mergeCellsVertically(table, 10, Constants.ROW_CNT - 2, Constants.ROW_CNT - 1);
 
     }
 
     private static void setStudentInfo(XWPFDocument doc) {
         int titleFontSize = 10;
-        //创建表格
-        XWPFTable table0 = XWPFWordUtils.getTable(doc, 2, 4,true);
-        XWPFTableRow tableRow0 = table0.getRow(0);
-        List<XWPFTableCell> cellList0 = tableRow0.getTableCells();
-        XWPFWordUtils.fillCellLeft(cellList0.get(0), "2400", "学院：汽车技术与服务学院", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList0.get(1), "2400", "专业：2018奔驰现代学徒制冠名班", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList0.get(2), "2400", "班级：QC汽车奔驰1804", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList0.get(3), "2400", "学制：3", titleFontSize, true);
+        //创建一个2行4列的表格
+        XWPFTable table0 = XWPFWordUtils.getTable(doc, 2, 4, true);
+        List<XWPFTableCell> cellList0 = table0.getRow(0).getTableCells();
 
-        XWPFTableRow tableRow1 = table0.getRow(1);
-        List<XWPFTableCell> cellList1 = tableRow1.getTableCells();
-        XWPFWordUtils.fillCellLeft(cellList1.get(0), "7200", "姓名：郑攀", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList1.get(1), "7200", "学号：2018108QC0220", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList1.get(2), "7200", "入校时间：2019-09-10", titleFontSize, true);
-        XWPFWordUtils.fillCellLeft(cellList1.get(3), "7200", "培养方式：全日制", titleFontSize, true);
+        String with = "7200";
+
+        XWPFWordUtils.fillCellLeft(cellList0.get(0), with, "学院：汽车技术与服务学院", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList0.get(1), with, "专业：2018奔驰现代学徒制冠名班", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList0.get(2), with, "班级：QC汽车奔驰1804", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList0.get(3), with, "学制：3", titleFontSize, true);
+
+        List<XWPFTableCell> cellList1 = table0.getRow(1).getTableCells();
+        XWPFWordUtils.fillCellLeft(cellList1.get(0), with, "姓名：郑攀", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList1.get(1), with, "学号：2018108QC0220", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList1.get(2), with, "入校时间：2019-09-10", titleFontSize, true);
+        XWPFWordUtils.fillCellLeft(cellList1.get(3), with, "培养方式：全日制", titleFontSize, true);
     }
 
     private static void testMerge() throws IOException {

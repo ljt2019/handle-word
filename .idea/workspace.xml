@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be16e24d-5a1a-46ae-b17a-ac91db00cf98" name="Default" comment="重构">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/constant/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/constant/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFWidthEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/enums/XWPFWidthEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tiger/xwpf/XWPFWordUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/word/XWPTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/constant/Constants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/TitleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/XWPFBorderStyleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/enums/XWPFWidthEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itext/ItextWordUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itextpdf/PdfUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/itextpdf/TableTitleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/POIMergeDocUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/WordTagTemplate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFParagraphHandler$RunChar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFParagraphHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFRunHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFTableHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XWPFWordUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tiger/tiger/xwpf/XwpfUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/ItextPdfTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/ItextPdfTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/ItextWordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/ItextWordTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/WordTagTemplateTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/WordTagTemplateTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/word/XWPTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/word/XWPTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,27 +39,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>table</find>
-      <find>setFont</find>
-      <find>List</find>
-      <find>multipliedLeading</find>
-      <find>string2Phrase</find>
-      <find>generation</find>
-      <find>PdfPTable</find>
-      <find>PdfDocument</find>
-      <find>title</find>
-      <find>Table</find>
-      <find>addCell</find>
-      <find>createCell</find>
-      <find>list</find>
-      <find>setChinaFont</find>
-      <find>indexs</find>
-      <find>totalRow</find>
-      <find>os</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -234,8 +196,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.XWPTest (1)" />
-        <item itemvalue="Application.ItextPdfTest" />
         <item itemvalue="Application.ItextWordTest" />
+        <item itemvalue="Application.ItextPdfTest" />
         <item itemvalue="Application.XWPTest" />
         <item itemvalue="Application.ItextTest" />
       </list>
@@ -269,7 +231,8 @@
       <workItem from="1568720887283" duration="723000" />
       <workItem from="1568723197781" duration="10192000" />
       <workItem from="1569127938870" duration="974000" />
-      <workItem from="1572692077473" duration="3076000" />
+      <workItem from="1572692077473" duration="3297000" />
+      <workItem from="1572744826556" duration="7253000" />
     </task>
     <task id="LOCAL-00001" summary="去除一些注释">
       <created>1560006704118</created>
@@ -310,7 +273,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
